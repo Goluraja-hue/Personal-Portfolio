@@ -55,7 +55,8 @@ form.addEventListener("submit",async function(e){
         document.getElementById("status").innerText = "Message sent successfully!"; 
       abc();
     } else {
-        document.getElementById("status").innerText = "Error sending message.";
-        
+        document.getElementById("status").innerText = "Error sending message.";   
   }
+
+
 });
