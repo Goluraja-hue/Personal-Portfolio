@@ -25,10 +25,37 @@ gsap.to(".progress-bar-inner",{
     delay:1,
 })
 
-let button = document.querySelector(".project-btn");
-button.setAttribute("href","https://www.googole.com")
-// button.addEventListener("click"{
-    
-// })
+const form = document.getElementById("form");
 
-console.log(button);
+
+form.addEventListener("submit",async function(e){
+    e.preventDefault();
+    const Data = document.querySelectorAll("#form-name");
+    const btn = document.querySelector("#sent-btn");
+    function abc(){
+       Data.forEach((data)=>{
+        data.value = "";
+    }) 
+        btn.textContent = "Sent Successfully";
+        btn.style.backgroundColor = "Green";
+    }
+    
+    
+    const data = new FormData(form);
+    let url = "";
+    const response = await fetch("https://formspree.io/f/mlgwjvdz", {
+        method: "POST",
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+    
+    if (response.ok) {
+        document.getElementById("status").innerText = "Message sent successfully!"; 
+      abc();
+    } else {
+        document.getElementById("status").innerText = "Error sending message.";
+        
+  }
+});
