@@ -322,30 +322,45 @@
                 </div>
             </div>
 
-            <div class="contact-form">
-                <h3>Send A Message</h3>
-                <div class="input-group">
+           <div class="contact-form"> 
+               <h3>Send A Message</h3>
+                <form action="https://formspree.io/f/mlgwjvdz"
+                    method="POST">
+                 <div class="input-group">
                     <label for="" class="input-label">Full Name</label>
-                    <input type="text" class="form-input" placeholder="Example : Golu">
+                    <input type="text" name="message" class="form-input" placeholder="Example : Golu">
                 </div>
 
                 <div class="input-group">
                     <label for="" class="input-label">Email Address</label>
-                    <input type="email" class="form-input" placeholder="Golu@example.com">
+                    <input type="email" name="email" class="form-input" placeholder="Golu@example.com">
                 </div>
 
                 <div class="input-group">
                     <label for="" class="input-label">Subject</label>
-                    <input type="text" class="form-input" placeholder="Work Enquiry">
+                    <input type="text" name="message" class="form-input" placeholder="Work Enquiry">
                 </div>
 
                 <div class="input-group">
                     <label for="" class="input-label">Message</label>
-                    <textarea name="" id="" class="form-input" placeholder="Tell me about your project or just say hello &#903; &#903; &#903;"></textarea>
+                    <textarea name="message" id="" class="form-input" placeholder="Tell me about your project or just say hello &#903; &#903; &#903;"></textarea>
                 </div>
-
-                <button class="form-input"> Send Message</button>
-            </div>
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+                <button type="submit" class="form-input"> Send Message</button>
+            </div> 
+        </form>
+            
+  <!-- <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  your other form fields go here 
+  <button type="submit">Send</button>
+</form> -->
         </div>
     </section>
     </main> 
